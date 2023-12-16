@@ -1,0 +1,41 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply flex flex-col justify-center bg-slate-900 px-8 text-slate-300;
+}
+
+a {
+	@apply rounded-md hover:bg-white/10;
+}
+
+input,
+select {
+	@apply rounded-md bg-slate-500 p-1;
+}
+
+button {
+	@apply rounded-md bg-slate-500  p-1;
+}
+
+h1 {
+	@apply text-4xl font-bold;
+}
+
+h2 {
+	@apply text-3xl font-bold;
+}
+
+h3 {
+	@apply text-2xl font-bold;
+}
+
+h4 {
+	@apply text-xl font-bold;
+}
+
+h5 {
+	@apply text-lg font-bold;
+}
