@@ -5,4 +5,8 @@
 	const day = $derived(parseInt($page.params.day))
 </script>
 
+<svelte:head>
+	<title>Day {day} - Advent of Svelte 2023</title>
+</svelte:head>
+
 <svelte:component this={Days[day]} />
