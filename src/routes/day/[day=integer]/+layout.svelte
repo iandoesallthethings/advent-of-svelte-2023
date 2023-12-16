@@ -9,23 +9,23 @@
 
 <nav class="flex w-full items-center justify-between p-2">
 	{#if previous > 0}
-		<a href="/day/{previous}">👈 prev</a>
+		<a href="/day/{previous}" class="button">👈 prev</a>
 	{:else}
-		<span class="opacity-30">👈 prev</span>
+		<a href="/" class="button">🏠 Home</a>
 	{/if}
 
 	<h3 class="group">
-		<span class="group-hover:hidden">
+		<span class="p-2 group-hover:hidden">
 			Day {$page.params.day}
 		</span>
 
-		<a href="/" class="hidden group-hover:block"> Go home</a>
+		<a href="/" class="button hidden group-hover:block"> Go home</a>
 	</h3>
 
 	{#if next <= Days.length - 1}
-		<a href="/day/{next}">next 👉</a>
+		<a href="/day/{next}" class="button">next 👉</a>
 	{:else}
-		<span class="opacity-30">next 👉</span>
+		<a href="/" class="button">🏠 Home</a>
 	{/if}
 </nav>
 

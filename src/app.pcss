@@ -4,11 +4,19 @@
 @tailwind utilities;
 
 body {
-	@apply flex flex-col justify-center bg-slate-900 px-8 text-slate-300;
+	@apply flex flex-col justify-center bg-slate-950 p-8 text-slate-300;
+}
+
+p {
+	@apply mb-4;
 }
 
 a {
-	@apply rounded-md hover:bg-white/10;
+	@apply rounded-md underline hover:bg-white/10;
+}
+
+a.button {
+	@apply p-2 !no-underline;
 }
 
 input,
