@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LineChart from '$lib/LineChart.svelte'
 	import { onMount } from 'svelte'
 
 	interface DataPoint {
@@ -40,6 +41,10 @@
 		const sum = dataPoints.reduce((acc, { heartRate }) => acc + heartRate, 0)
 		return sum / dataPoints.length
 	}
+
+	function msSince(date: Date) {
+		return new Date().getTime() - date.getTime()
+	}
 </script>
 
 <button on:click={() => (running = !running)}>
@@ -51,13 +56,19 @@
 		Current: {heartRate}
 	</h3>
 
-	<div>10 seconds: {interval(1 / 60)}</div>
+	<div>Past 10 seconds: {interval(1 / 60)}</div>
 	<div>Past 1 min: {interval(1)}</div>
 	<div>Past 10 min: {interval(10)}</div>
 	<div>Past Hour: {interval(60)}</div>
 	<div>Past Day: {interval(60 * 24)}</div>
 	<div>All Time: {average(history)}</div>
 </div>
+<LineChart
+	plots={{
+		white: history.map(({ time }) => [msSince(time) / 1000, average(history)]),
+		red: history.map(({ heartRate, time }) => [msSince(time) / 1000, heartRate]),
+	}}
+/>
 
 <div class="h-64 overflow-y-auto rounded border">
 	{#each history as { heartRate, time }, _index}
