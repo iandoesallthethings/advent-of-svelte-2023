@@ -10,7 +10,15 @@
 
 	let gifts = $state<Gift[]>([])
 	let load = $state<Gift[]>([])
-	let weight = $derived(load.reduce((acc, { weight }) => acc + weight, 0))
+	let sent = $state<Gift[]>([])
+
+	let weight = $derived(load.reduce(calculateWeight, 0))
+	let sentWeight = $derived(sent.reduce(calculateWeight, 0))
+	let remainingWeight = $derived(gifts.reduce(calculateWeight, 0))
+
+	function calculateWeight(accumulator: number, { weight }: Gift) {
+		return accumulator + weight
+	}
 
 	async function getGifts() {
 		const res = await fetch('https://advent.sveltesociety.dev/data/2023/day-three.json')
@@ -30,7 +38,7 @@
 		}
 	}
 
-	function dropLoad(event: DragEvent) {
+	function dropLoad() {
 		if (draggingGifts) {
 			gifts = gifts.filter((gift) => gift !== draggingGifts)
 			load.push(draggingGifts)
@@ -47,12 +55,16 @@
 			return
 		}
 
+		sent.push(...load)
 		load = []
 	}
 </script>
 
+<p>Total Sent: {sentWeight}kg</p>
+<p>Total Remaining {remainingWeight + weight}kg</p>
+
 <h3 class="text-center">
-	Current Load: {weight}kg
+	Current Load: {weight}/100kg
 	{#if weight > 100}
 		<span class="text-red-500">Overloaded!</span>
 	{/if}
