@@ -35,6 +35,7 @@
 	}
 </script>
 
+<p>Data's a bit stale on this one and it doesn't seem to be updating anymore. Gonna skip it.</p>
 <button on:click={() => (running = !running)}>
 	{running ? 'Stop' : 'Start'}
 </button>
