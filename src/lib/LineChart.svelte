@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { sequence } from '$lib/Numbers'
 	interface Props {
 		plots: Record<string, number[][]>
 		xRange?: [number, number]
@@ -27,9 +28,6 @@
 	function getYRange(points: number[][]) {
 		const allYs = points.map(([_x, y]) => y)
 		return [Math.min(...allYs) - yBuffer, Math.max(...allYs) + yBuffer]
-	}
-	function sequence(start: number, end: number, step: number = 1) {
-		return Array.from({ length: (end - start) / step + 1 }, (_, i) => start + i * step)
 	}
 </script>
 
