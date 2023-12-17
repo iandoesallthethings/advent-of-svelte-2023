@@ -63,9 +63,10 @@
 	<div>Past Day: {interval(60 * 24)}</div>
 	<div>All Time: {average(history)}</div>
 </div>
+
 <LineChart
 	plots={{
-		white: history.map(({ time }) => [msSince(time) / 1000, average(history)]),
+		green: history.map(({ time }) => [msSince(time) / 1000, average(history)]),
 		red: history.map(({ heartRate, time }) => [msSince(time) / 1000, heartRate]),
 	}}
 />

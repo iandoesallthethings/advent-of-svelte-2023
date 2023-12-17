@@ -48,6 +48,7 @@
 			<th>Date</th>
 		</tr>
 	</thead>
+
 	<tbody>
 		{#each data as { elf, task, minutesTaken, date }}
 			<tr>
