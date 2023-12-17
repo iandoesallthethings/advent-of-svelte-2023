@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { morseCode, type MorseLetter } from '$lib/morse'
+	import { morseCode, type MorseLetter } from '$lib/Morse'
 	const helloWorld = `.... . .-.. .-.. --- / .-- --- .-. .-.. -..`
 
 	let input = $state(helloWorld)
