@@ -11,6 +11,7 @@
 	let heartRate = $state(0)
 	let history = $state<DataPoint[]>([])
 
+	let oldestData = $derived(msSince(history[history.length - 1]?.time ?? new Date()))
 	onMount(run)
 
 	async function run() {
@@ -30,8 +31,8 @@
 
 	function interval(numberOfMinutes: number) {
 		const now = new Date()
-		const start = new Date(now.getTime() - numberOfMinutes * 60 * 1000)
 
+		const start = new Date(now.getTime() - numberOfMinutes * 60 * 1000)
 		const dataPoints = history.filter(({ time }) => time > start)
 
 		return average(dataPoints)
@@ -45,23 +46,35 @@
 	function msSince(date: Date) {
 		return new Date().getTime() - date.getTime()
 	}
+
+	let round = Intl.NumberFormat('en', {
+		maximumSignificantDigits: 5,
+	})
 </script>
 
-<button on:click={() => (running = !running)}>
+<button class="w-min self-end" on:click={() => (running = !running)}>
 	{running ? 'Stop' : 'Start'}
 </button>
 
-<div class="divide-y rounded border">
-	<h3>
-		Current: {heartRate}
-	</h3>
+<div>
+	<h2>Current: {heartRate}</h2>
+	<h4>Average: {round.format(average(history))}</h4>
 
-	<div>Past 10 seconds: {interval(1 / 60)}</div>
-	<div>Past 1 min: {interval(1)}</div>
-	<div>Past 10 min: {interval(10)}</div>
-	<div>Past Hour: {interval(60)}</div>
-	<div>Past Day: {interval(60 * 24)}</div>
-	<div>All Time: {average(history)}</div>
+	<div class:hidden={oldestData < 10 * 1000}>
+		10s: {round.format(interval(1 / 60))}
+	</div>
+	<div class:hidden={oldestData < 60 * 1000}>
+		1m: {round.format(interval(1))}
+	</div>
+	<div class:hidden={oldestData < 10 * 60 * 1000}>
+		10m: {round.format(interval(10))}
+	</div>
+	<div class:hidden={oldestData < 60 * 60 * 1000}>
+		1h: {round.format(interval(60))}
+	</div>
+	<div class:hidden={oldestData < 24 * 60 * 60 * 1000}>
+		1d: {round.format(interval(60 * 24))}
+	</div>
 </div>
 
 <LineChart
@@ -71,8 +84,11 @@
 	}}
 />
 
-<div class="h-64 overflow-y-auto rounded border">
+<div class="h-64 overflow-y-auto">
 	{#each history as { heartRate, time }, _index}
-		<div>{heartRate} @ {time.toLocaleTimeString()}</div>
+		<div class="flex justify-between gap-2 px-2 odd:bg-white/10">
+			<div>{heartRate}</div>
+			<div>{time.toLocaleTimeString()}</div>
+		</div>
 	{/each}
 </div>

@@ -33,7 +33,7 @@
 	}
 </script>
 
-<svg {viewBox} class="-scale-y-100 {className} rounded border">
+<svg {viewBox} class="-scale-y-100 {className}">
 	<g class="y">
 		{#each sequence(60, 160, 5) as y}
 			<line x1="0" x2="60" y1={y} y2={y} class="line" />
