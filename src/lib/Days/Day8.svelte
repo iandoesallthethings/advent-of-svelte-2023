@@ -35,7 +35,8 @@
 	}
 
 	function cardSrc(number: number) {
-		return `https://advent.sveltesociety.dev/data/2023/day-eight/${number}.png`
+		// return `https://advent.sveltesociety.dev/data/2023/day-eight/${number}.png`
+		return `/cards/${number}.png`
 	}
 
 	function select(index: number) {
@@ -97,9 +98,13 @@
 		{#if matched.includes(index)}
 			<img src={cardSrc(card)} alt="{card} card" class="opacity-10" />
 		{:else if selection.includes(index)}
-			<img src={cardSrc(card)} on:click={() => deselect(index)} alt="{card} card" class="" />
+			<button on:click={() => deselect(index)} class="card">
+				<img src={cardSrc(card)} alt="{card} card" />
+			</button>
 		{:else}
-			<img src="/cards/blank.png" on:click={() => select(index)} alt="Back card" class="" />
+			<button on:click={() => select(index)} class="card">
+				<img src="/cards/blank.png" alt="Back card" />
+			</button>
 		{/if}
 	{/each}
 </div>
@@ -125,3 +130,9 @@
 		</tbody>
 	</table>
 {/if}
+
+<style lang="postcss">
+	button.card {
+		all: unset;
+	}
+</style>
