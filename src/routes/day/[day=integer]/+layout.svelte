@@ -29,4 +29,6 @@
 	{/if}
 </nav>
 
-<slot />
+<div class="page flex w-full grow flex-col overflow-y-auto">
+	<slot />
+</div>

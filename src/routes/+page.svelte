@@ -23,7 +23,7 @@
 	</a>
 </div>
 
-<div class="flex flex-col gap-2">
+<div class="page flex h-full flex-col gap-2 overflow-y-auto pb-8">
 	{#each Days as _day, index}
 		{#if index > 0}
 			<a href="/day/{index}" class="button">Day {index}</a>
