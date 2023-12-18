@@ -7,7 +7,7 @@
 	const next = $derived(current + 1)
 </script>
 
-<nav class="flex w-full items-center justify-between p-2">
+<nav class="z-50 flex w-full items-center justify-between p-2">
 	{#if previous > 0}
 		<a href="/day/{previous}" class="button">👈 prev</a>
 	{:else}
