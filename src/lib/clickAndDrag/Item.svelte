@@ -3,38 +3,14 @@
 
 	interface Props {
 		decoration: Decoration
-		container: HTMLElement
 	}
 
-	let { decoration, container } = $props<Props>()
-
-	let dragging = $state(false)
-
-	function dragStart() {
-		console.debug('dragStart')
-		dragging = true
-	}
-	function dragEnd() {
-		console.debug('dragEnd')
-		dragging = false
-	}
-
-	function drag(event: DragEvent) {
-		console.debug(dragging)
-		if (dragging) {
-			decoration.x += event.movementX / container.clientWidth
-			decoration.y += event.movementY / container.clientHeight
-			console.debug(decoration.x, decoration.y)
-		}
-	}
+	let { decoration } = $props<Props>()
 </script>
 
 <div
-	role="listitem"
-	on:dragstart={dragStart}
-	on:dragend={dragEnd}
-	on:drag={drag}
-	class="absolute font-bold"
+	on:mousedown
+	class="target absolute font-bold"
 	style="
 			container-name: canvas;
 			top: calc({decoration.y}cqh - {decoration.size}cqw / 2)
