@@ -14,7 +14,6 @@
 		{ type: 'image', id: 1, x: 20, y: 20, size: 50 },
 	]
 
-	// let canvas: HTMLDivElement
 	let decorations = $state<Decoration[]>(example)
 
 	let moveable = $state<Moveable>()
@@ -32,7 +31,9 @@
 
 <div class="flex h-full w-full">
 	<div
-		class="flex max-h-full w-16 flex-col items-center divide-y overflow-y-auto overflow-x-hidden rounded-lg border"
+		class="
+			flex max-h-full w-16 flex-col items-center divide-y overflow-y-auto overflow-x-hidden rounded-lg border
+		"
 	>
 		<div class="flex h-16 items-center justify-center">Text</div>
 
@@ -50,6 +51,7 @@
 			{#each decorations as decoration}
 				<Item bind:decoration on:mousedown={onMouseDown} />
 			{/each}
+
 			<Moveable bind:this={moveable} {target} />
 		</div>
 	</div>

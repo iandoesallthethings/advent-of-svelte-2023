@@ -1,13 +1,18 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
 
-	const filters = {
+	interface Child {
+		name: string
+		tally: number
+	}
+
+	const filters: Record<string, (child: Child) => boolean> = {
 		all: () => true,
 		nice: ({ tally }) => tally > 0,
 		naughty: ({ tally }) => tally <= 0,
 	}
 
-	const sorts = {
+	const sorts: Record<string, (a: Child, b: Child) => number> = {
 		name: (a, b) => a.name.localeCompare(b.name) * direction,
 		tally: (a, b) => (b.tally - a.tally) * direction,
 	}
@@ -18,14 +23,11 @@
 	let sort = $state('name')
 	let direction = $state(1)
 
-	let children = $state([])
+	let children = $state<Child[]>([])
 	let sortedChildren = $derived(children.filter(filters[filter]).sort(sorts[sort]))
 
 	function submit() {
-		children.unshift({
-			name,
-			tally,
-		})
+		children.unshift({ name, tally })
 	}
 
 	function remove(index: number) {

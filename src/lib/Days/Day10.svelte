@@ -32,6 +32,8 @@
 
 		<h1>MAURY CHRIMBUS</h1>
 
-		<video bind:this={video} src="/chrimbus.webm" class="w-full" />
+		<video bind:this={video} src="/chrimbus.webm" class="w-full">
+			<track kind="captions" />
+		</video>
 	</div>
 </dialog>

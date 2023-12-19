@@ -9,6 +9,8 @@
 </script>
 
 <div
+	role="button"
+	tabindex="0"
 	on:mousedown
 	class="target absolute font-bold"
 	style="
