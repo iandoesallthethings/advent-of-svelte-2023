@@ -9,7 +9,7 @@ import Day8 from './Day8.svelte'
 import Day9 from './Day9.svelte'
 import Day10 from './Day10.svelte'
 import Day11 from './Day11.svelte'
-import Day12 from './Day12.svelte'
+// import Day12 from './Day12.svelte'
 
 interface Day {
 	title: string
@@ -17,7 +17,7 @@ interface Day {
 }
 
 export default [
-	undefined,
+	undefined, // Days start at 1
 	{ title: 'Naughty or Nice', component: Day1 },
 	{ title: 'Merry Munch-o-Meter', component: Day2 },
 	{ title: 'Jingle Bell Balancer', component: Day3 },
@@ -29,5 +29,5 @@ export default [
 	{ title: "Santa's Final Countdown", component: Day9 },
 	{ title: 'Pop-up! Spreading the holiday cheer', component: Day10 },
 	{ title: 'Tinsel Transformers', component: Day11 },
-	{ title: 'Greetings and Salutations', component: Day12 },
+	// { title: 'Greetings and Salutations', component: Day12 },
 ] satisfies (Day | undefined)[]

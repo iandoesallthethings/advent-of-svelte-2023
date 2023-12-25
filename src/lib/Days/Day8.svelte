@@ -25,6 +25,7 @@
 		selection = []
 		matched = []
 		cards = shuffle([...sequence(1, pairs), ...sequence(1, pairs)])
+		running = true
 		tick()
 	}
 
