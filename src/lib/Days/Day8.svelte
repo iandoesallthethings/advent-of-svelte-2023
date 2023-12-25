@@ -18,6 +18,7 @@
 	}
 
 	let records = $state<GameRecord[]>([])
+	let timerTick: number
 
 	function reset() {
 		time = 0
@@ -26,13 +27,14 @@
 		matched = []
 		cards = shuffle([...sequence(1, pairs), ...sequence(1, pairs)])
 		running = true
+		window.clearTimeout(timerTick)
 		tick()
 	}
 
 	function tick() {
 		if (!running) return
 		time++
-		window.setTimeout(tick, 1000)
+		timerTick = window.setTimeout(tick, 1000)
 	}
 
 	function cardSrc(number: number) {
