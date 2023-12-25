@@ -14,13 +14,10 @@
 		<a href="/" class="button">🏠 Home</a>
 	{/if}
 
-	<h3 class="group">
-		<span class="p-2 group-hover:hidden">
-			Day {$page.params.day}
-		</span>
-
-		<a href="/" class="button hidden group-hover:block"> Go home</a>
-	</h3>
+	<a href="/" class="button group p-2 text-2xl font-bold">
+		<span class="group-hover:hidden">Day {$page.params.day}</span>
+		<span class="hidden group-hover:inline">Go home</span>
+	</a>
 
 	{#if next <= Days.length - 1}
 		<a href="/day/{next}" class="button">next 👉</a>
