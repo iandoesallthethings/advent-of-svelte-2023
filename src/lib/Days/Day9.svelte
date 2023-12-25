@@ -35,6 +35,8 @@
 	onMount(run)
 </script>
 
+<h3>Santa's Final Countdown</h3>
+
 <h1 class="rounded-lg border p-8 text-center">
 	{#each timerSegments(timeLeft) as segment}
 		<div>{segment}</div>

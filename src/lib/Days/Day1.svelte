@@ -43,6 +43,8 @@
 	onMount(fetchChildren)
 </script>
 
+<h3>Naughty or Nice</h3>
+
 <form on:submit={submit} class="flex w-full justify-center gap-2 py-4">
 	<input type="text" name="name" bind:value={name} />
 	<input type="number" name="tally" bind:value={tally} class="w-16" />

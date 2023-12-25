@@ -11,5 +11,7 @@
 	}
 </script>
 
+<h3>Morse Mischief</h3>
+
 <div class="h-20 rounded bg-white/10 p-2">{output}</div>
 <input on:input={() => (output = translate(input))} type="text" bind:value={input} />
