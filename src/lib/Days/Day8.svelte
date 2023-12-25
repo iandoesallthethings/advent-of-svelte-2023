@@ -85,8 +85,6 @@
 	onMount(reset)
 </script>
 
-<h3>Santa's Mysterious Deck of Doubles</h3>
-
 <div class="flex items-center gap-2 py-2">
 	<div>Time: {formatter.format(new Date(time * 1000))}</div>
 	<div>Tries: {tries}</div>

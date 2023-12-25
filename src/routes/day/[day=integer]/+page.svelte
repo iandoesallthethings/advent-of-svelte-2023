@@ -9,4 +9,8 @@
 	<title>Day {day} - Advent of Svelte 2023</title>
 </svelte:head>
 
-<svelte:component this={Days[day]} />
+{#if Days[day]}
+	<h3>{Days[day].title}</h3>
+
+	<svelte:component this={Days[day].component} />
+{/if}

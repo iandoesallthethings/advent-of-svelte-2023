@@ -6,7 +6,8 @@
 	<title>Advent of Svelte 2023</title>
 </svelte:head>
 
-<img src="favicon.png" alt="Advent of Svelte 2023" class="max-w-xs self-center" />
+<img src="favicon.png" alt="Advent of Svelte 2023" class="max-w-[150px] self-center sm:max-w-xs" />
+
 <h1 class="mb-4 self-center">Advent of Svelte 2023</h1>
 
 <p class="max-w-prose self-center">
@@ -24,9 +25,9 @@
 </div>
 
 <div class="page flex h-full flex-col gap-2 overflow-y-auto pb-8">
-	{#each Days as _day, index}
-		{#if index > 0}
-			<a href="/day/{index}" class="button">Day {index}</a>
+	{#each Days as day, index}
+		{#if day}
+			<a href="/day/{index}" class="button">Day {index} - {day.title}</a>
 		{/if}
 	{/each}
 </div>

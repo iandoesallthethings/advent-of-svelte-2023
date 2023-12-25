@@ -22,8 +22,6 @@
 	onMount(popUp)
 </script>
 
-<h3>Pop-up! Spreading the Holiday Cheer</h3>
-
 <div class="absolute left-0 top-0 flex h-screen w-full items-center justify-center">
 	<button on:click={open}>LETS GO</button>
 </div>

@@ -52,8 +52,6 @@
 	})
 </script>
 
-<h3>Misteltoe Metronome</h3>
-
 <svelte:body on:keydown={handleKeydown} />
 <h1 class="py-8 text-center">{round.format(tempo)} BPM</h1>
 

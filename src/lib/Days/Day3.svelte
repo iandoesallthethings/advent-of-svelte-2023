@@ -60,8 +60,6 @@
 	}
 </script>
 
-<h3>Jingle Bell Balancer</h3>
-
 <p>Total Sent: {sentWeight}kg</p>
 <p>Total Remaining {remainingWeight + weight}kg</p>
 
