@@ -9,7 +9,19 @@ import Day8 from './Day8.svelte'
 import Day9 from './Day9.svelte'
 import Day10 from './Day10.svelte'
 import Day11 from './Day11.svelte'
-// import Day12 from './Day12.svelte'
+import Day12 from './Day12.svelte'
+import Day13 from './Day13.svelte'
+import Day14 from './Day14.svelte'
+import Day15 from './Day15.svelte'
+import Day16 from './Day16.svelte'
+import Day17 from './Day17.svelte'
+import Day18 from './Day18.svelte'
+import Day19 from './Day19.svelte'
+import Day20 from './Day20.svelte'
+import Day21 from './Day21.svelte'
+import Day22 from './Day22.svelte'
+import Day23 from './Day23.svelte'
+import Day24 from './Day24.svelte'
 
 interface Day {
 	title: string
@@ -173,17 +185,192 @@ You could also transform this Holiday Greeting Pop-Up into an installable packag
 	}`,
 		component: Day11,
 	},
-	// {
-	// 	title: 'Greetings and Salutations',
-	// 	text: `It's time to start sending out Christmas cards to ensure they arrive in time for Christmas Day, but with the added rush at the North Pole no one has had time to design a card! Santa has requested the creation of a digital Christmas card creator.
+	{
+		component: Day12,
+		title: 'Greetings and Salutations',
+		text: `It's time to start sending out Christmas cards to ensure they arrive in time for Christmas Day, but with the added rush at the North Pole no one has had time to design a card! Santa has requested the creation of a digital Christmas card creator.
 
-	// Your mission is to build an interactive application that allows users to design their own Christmas cards with ease. Embrace the festive spirit and Svelte's capabilities to create a tool where elements can be effortlessly dragged, dropped, and arranged into beautiful holiday greetings.
+	Your mission is to build an interactive application that allows users to design their own Christmas cards with ease. Embrace the festive spirit and Svelte's capabilities to create a tool where elements can be effortlessly dragged, dropped, and arranged into beautiful holiday greetings.
 
-	// The elves have drawn some decorations for use in your Christmas card creator. Feel free to add more drawings if you'd like! Implement an intuitive drag-and-drop interface where users can select, move, and place elements anywhere on the card.
+	The elves have drawn some decorations for use in your Christmas card creator. Feel free to add more drawings if you'd like! Implement an intuitive drag-and-drop interface where users can select, move, and place elements anywhere on the card.
 
-	// If you're up to the task, you could also allow users to add personalized messages with different fonts, sizes, and colors. Include festive font styles to enhance the holiday feel. Google Fonts has some fonts that suit santas taste!
+	If you're up to the task, you could also allow users to add personalized messages with different fonts, sizes, and colors. Include festive font styles to enhance the holiday feel. Google Fonts has some fonts that suit santas taste!
 
-	// You can find the decorations by visiting https://advent.sveltesociety.dev/data/2023/day-twelve/NUMBER.png where NUMBER is a number from 1 to 11 inclusive.`,
-	// 	component: Day12,
-	// },
+	You can find the decorations by visiting https://advent.sveltesociety.dev/data/2023/day-twelve/NUMBER.png where NUMBER is a number from 1 to 11 inclusive.`,
+	},
+	// 	{
+	// 		title: 'Jingle Bell Balancer 2.0',
+	// 		text: `Santa is very happy with the Sleigh Load Balancer (SLB™) - it revolutionised the way presents are loaded onto his sleigh, ensuring a smooth and efficient journey. However, as the holiday season approaches and the number of children around the world continues to grow, a new need has emerged. Santa now requires an automated solution to plan his deliveries. With millions of children eagerly awaiting their gifts, manual planning simply won't cut it anymore. It's time to take the SLB™ to the next level by automating the entire sleigh loading and route planning process.
+
+	// 		The new load balancer needs to be able to group the list of children into deliveries automatically and present each run with the optimal selection of presents. Svelte Bot has suggested you add general statistics such as the average weight of the sled, and the number of deliveries!
+
+	// 		Santa has tasked the SLB to handle 10,000 children at a time. You can fetch the test data of the first 10,000 children by making a GET request to https://advent.sveltesociety.dev/data/2023/day-thirteen.json.
+
+	// 		The TypeScript type for this data is:
+
+	// 		interface Present {
+	// 				name: string;
+	// 				weight: number;
+	// 		}
+
+	// 		type ResponseData = Present[]`,
+	// 		component: Day13,
+	// 	},
+	// 	{
+	// 		component: Day14,
+	// 		title: 'Snowfall Symphony',
+	// 		text: `In a captivating late-night discussion under the stunning northern lights, Santa and Svelte Bot found themselves engaged in a debate: Can the beauty of snow be captured digitally? To settle this debate, Svelte Bot has tasked you with creating a snowfall simulator.
+
+	// 		Your task involves creating a versatile Snowfall component. It should allow customisation such as adjusting the quantity of snowflakes, and their speed. You may use any technology you prefer, though Svelte Bot recommends Svelte, CSS, and SVGs.`,
+	// 	},
+	// 	{
+	// 		component: Day15,
+	// 		title: 'Sparkling Snowglobes',
+	// 		text: `As the elves huddled around the glowing workshop table, the idea struck them like a sparkling snowflake: why not take the Snowfall component we've made a step further and create a customisable Snow Globe!? The idea of being able to quickly design unique Snow Globes to send out to their friends and family filled them with excitement.
+
+	// 	They've asked you to integrate your wonderful Snowfall component, and its various customisable options into a brilliant Snow Globe customiser. They would also like some additional ways to configure it which is up to your imagination. Svelte Bot has suggested you could add options like changing the colour, changing the decorations, and even adding your own background image.`,
+	// 	},
+	// 	{
+	// 		component: Day16,
+	// 		title: 'Lessons from Amazon™️',
+	// 		text: `Santa is taking notes from the best. While Mrs Claus was watching TV, Santa overheard about Amazon's new warehouse robots and got inspired. He decided to move all the gifts already made into a giant hangar (it's actually 20x20, but don't tell Santa; he will be sad about it) and tasked you with teaching Svelte Bot how to fetch every gift.
+
+	// Your job? Build a visual representation of the 20x20 hangar with all the gifts stacked on top of each other and a system for inputting commands into Svelte Bot on how to move from his starting point to the actual gift. You can fetch the list of gifts from https://advent.sveltesociety.dev/data/2023/day-sixteen.json.
+
+	// The TypeScript type for this data is:
+
+	// interface Present {
+	// 	name: string
+	// 	x: number // 1-20
+	// 	y: number // 1-20
+	// }
+
+	// type ResponseData = Present[]`,
+	// 	},
+	// 	{
+	// 		component: Day17,
+	// 		title: 'Festive Funds',
+	// 		text: `In the bustling North Pole, the elves are taking a short break from their work to buy presents for each other. They're excited about the idea but realise they need to be careful with their spending. To help them manage their budgets, Svelte Bot has come up with a brilliant idea: an app that keeps track of their Christmas shopping expenses. This app will be a real game-changer for the elves, ensuring they can buy thoughtful gifts without overspending.
+
+	// 		Svelte Bot needs your help to build this app; it should allow each elf to input their total budget for gifts. Once the budget is set, the elves can then add each item they're planning to buy, along with its cost. The clever part of the app will be how it shows the elves the total amount of money they've spent so far and how much they have left. This way, they can easily see if they're sticking to their budget or if they need to rethink some of their gift choices.`,
+	// 	},
+	// 	{
+	// 		component: Day18,
+	// 		title: `Santa's Quiz`,
+	// 		text: `Santa, always keen to share the rich history of the North Pole with the younger generation of elves, decided it was time for a fun and educational activity. He thought a quiz game would be a delightful way for the young elves to learn about their heritage and the many tales of the North Pole. Eager to make this idea a reality, Santa turned to you for help. He knew you had the skills to create something both engaging and informative. Your task is to develop a simple quiz game that would captivate the young elves and teach them in an interactive way.
+
+	// 		To assist you in this endeavour, Svelte Bot has stepped in with a list of trivia questions about the North Pole in JSON format. Your challenge is to fetch these questions from the API and present them in a user-friendly multiple choice quiz format.
+
+	// 		You can fetch this data by making a GET request to https://advent.sveltesociety.dev/data/2023/day-eighteen.json. It will return 20 random questions every time, each with four answers, one of which is correct.
+
+	// 		The data as a TypeScript type is:
+
+	// 		interface Question {
+	// 				question: string;
+	// 				answers: {
+	// 						text: string;
+	// 						correct: boolean;
+	// 				}[]
+	// 		}
+
+	// 		type ResponseData = Question[];`,
+	// 	},
+	// 	{
+	// 		component: Day19,
+	// 		title: 'Polar Lights',
+	// 		text: `Santa, always keen on brightening up the North Pole with new and exciting ideas, has come up with a plan to introduce Zigbee-controlled Christmas lights (he likes to own his devices). He envisions these lights to be not only spectacular in appearance but also highly customisable. To bring this vision to life, Santa needs a creative mind to design a prototype, and that's where you come in. Your challenge is to create a Christmas light simulator, a tool that will allow Santa to experiment with different designs and settings before the elves start building the actual lights.
+
+	// 		Your simulator should be user-friendly and intuitive, enabling Santa to play around with various parameters. Consider including options to change the colours of the lights, their blinking patterns, intensity, and perhaps even the sequence in which they light up. Your simulator will be an essential tool in Santa's workshop, helping him to visualise and finalise the designs for these new, magical Christmas lights.`,
+	// 	},
+	// 	{
+	// 		component: Day20,
+	// 		title: 'Jingle Jokes',
+	// 		text: `Late last night, Svelte Bot was exploring various Christmas traditions. During his research, he stumbled upon something that truly captivated his interest: Christmas Cracker Jokes. These jokes are a staple at many homes during Christmas, and he is keen to bring it early to the North Pole to keep spirits high.
+
+	// 		He envisions a special button, one that, when pressed, would randomly select and display a joke from a collection of classic Christmas Cracker Jokes. As an added bonus, you could integrate the Web SpeechSynthesis API. This feature would enable the jokes to be read aloud, enhancing amusement and accessibility for everyone in the workshop.
+
+	// 		You can fetch this data by making a GET request to https://advent.sveltesociety.dev/data/2023/day-twenty.json.
+
+	// 		The data as a TypeScript type is:
+
+	// 		type ResponseData = string[];`,
+	// 	},
+	// 	{
+	// 		component: Day21,
+	// 		title: 'Oh the weather outside is frightful',
+	// 		text: `As Christmas nears, Santa is in a bit of trouble. His old barometer, which has been a big help over the years, has broken. Santa requires precise meteorological forecasts to navigate his near-light-speed sleigh journey across the globe. Luckily this year you're here to help. Your task is to build a simple Christmas themed weather app. You can use the Open-Meteo API for current weather updates and the Web Geolocation API to find the current location.`,
+	// 	},
+	// 	{
+	// 		component: Day22,
+	// 		title: 'Snowflake Silhouettes',
+	// 		text: `The North Pole is a magical land full of snow, with each snowflake as unique as the individual it represents. In this magical challenge, your task is to bring to life a one-of-a-kind Snowflake Generator. This special tool will create a unique snowflake shape using the person's name as the basis or ‘seed' for the design. The pattern of the snowflake could be influenced by factors such as the length of the name, the characters used, and their arrangement. Optionally, you may also include a feature to download or copy the generated snowflake. For suggestions on how to build a snowflake generator, Svelte Bot recommends this tutorial to get started.`,
+	// 	},
+	// 	{
+	// 		component: Day23,
+	// 		title: 'ElfNet Social',
+	// 		text: `In the enchanting realm of the North Pole, the Elves have made a significant leap into the world of technology by crafting ElfNet, their exclusive social network. This digital platform is brimming with the festive spirit of the holiday season. However, they've encountered a challenge: they need a way to effectively manage and interact with the ElfNet backend. They require your assistance to establish a seamless connection with their ElfDB, ensuring that posts are dynamically displayed as they are submitted throughout the day.
+
+	// 		Svelte Bot setup a JSON endpoint for you to get the live data from ElfDB: https://advent.sveltesociety.dev/data/2023/day-twenty-three.json. Here is what that data looks like as a TypeScript type:
+
+	// 		interface ElfPost {
+	// 			id: string
+	// 			author: string
+	// 			timestamp: string
+	// 			content: string
+	// 			likes: number
+	// 			comments: Comment[]
+	// 		}
+
+	// 		interface Comment {
+	// 			id: string
+	// 			author: string
+	// 			timestamp: string
+	// 			content: string
+	// 			likes: number
+	// 		}
+
+	// 		type ResponseData = ElfPost[]`,
+	// 	},
+	// 	{
+	// 		component: Day24,
+	// 		title: `Santa's Magical Tracker`,
+	// 		text: `After a hard month of solving challenges and repairing the sleigh, it's finally Christmas Eve. Svelte Bot needs your help to solve the final piece of the puzzle; the Sleigh Position Reporting System (SPRS™). This is crucial for everyone at the North Pole to keep an eye on Santa's epic journey around the world! Your mission is to create a magical map where Santa's real-time location is tracked as he flies from city to city, spreading joy and delivering gifts. Feel free to add a sprinkle of holiday cheer from an earlier challenge - perhaps you'd like to add some snowfall or give each location a unique snowflake?
+
+	// 		Santa has supernatural speed and can visit every city in the world in a single night, starting on Christmas Eve at 10am UTC. Santa usually visits each city for just a few minutes, so make sure to update the map frequently! You can use the provided data to get the list of cities and their arrival times.
+
+	// 		Svelte Bot has put together an example Mapbox REPL to help you get started. You can then fetch the data in real time here: https://advent.sveltesociety.dev/data/2023/day-twenty-four.json. Santa starts his flight at 10am UTC.
+
+	// 		The TypeScript type for the data is:
+
+	// 		interface Destination {
+	// 				id: string;
+	// 				arrival: number; // arrival unix timestamp (UTC)
+	// 				departure: number | null; // only null for the final landing
+	// 				population: number;
+	// 				presentsDelivered: number;
+	// 				city: string;
+	// 				region: string;
+	// 				location: {
+	// 						lat: number;
+	// 						lng: number;
+	// 				};
+	// 		}
+
+	// 		interface ResponseData {
+	// 				/**
+	// 				 * Current Location
+	// 				 */
+	// 				current: Destination | null;
+
+	// 				/**
+	// 				 * Next Location
+	// 				 */
+	// 				next: Destination | null;
+
+	// 				/**
+	// 				 * History of locations (excluding current)
+	// 				 */
+	// 				destinations: Destination[];
+	// 		}`,
+	// 	},
 ] satisfies (Day | undefined)[]
